@@ -1,0 +1,29 @@
+@font-face {
+  font-family: logo;
+  src: url("./fonts/logo.ttf");
+}
+
+@font-face {
+  font-family: quicksand;
+  src: url("./fonts/quichsand.ttf");
+}
+
+body{
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+*{
+  font-family:quicksand ;
+  font-weight: 400;
+}
+
+.logo-font{
+  font-family:logo;
+}
+
+.path1{
+clip-path: polygon(0px 400px, 0px 0px, 289px 3px, 304.92px 59.95px, 305.78px 63px, 400px 78px, 400px 400px);
+background-color: hsl(201, 100%, 52%);
+}
+
