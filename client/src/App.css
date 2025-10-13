@@ -13,6 +13,10 @@ body{
   overflow-x: hidden;
 }
 
+body::selection{
+  background-color: #c13bf2;
+}
+
 *{
   font-family:quicksand ;
   font-weight: 400;
