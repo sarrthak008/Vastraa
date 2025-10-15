@@ -64,7 +64,7 @@ const Home = () => {
                  </div>
              </div>
 
-             <div className='flex h-full w-[18vw] items-center justify-center flex-col hero'>
+             <div className='flex h-full w-[300px] items-center justify-center flex-col hero shrink-0'>
                 <div className='w-full h-[55vh] bg-gray-500 rounded-3xl'> 
 
                  </div>
