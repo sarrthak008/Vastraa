@@ -7,8 +7,7 @@ import Notfound from "./views/Notfound"
 import {MainLoader} from "./components/Loader"
 import axios from "axios"
 import { useEffect } from "react"
-
-
+import Login from "./views/Login"
 // load backedn url
 const FASHION_AI_API = import.meta.env.VITE_FASHION_X_AI;
 
@@ -36,6 +35,7 @@ const App = () => {
     {ping && <MainLoader/>}
        <Routes>
            <Route path="/" element={<Home/>}/>
+           <Route path="/login" element={<Login/>} />
            <Route path="*" element={<Notfound/>} />
        </Routes>
     </BrowserRouter>

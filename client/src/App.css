@@ -27,8 +27,7 @@ body::selection{
 }
 
 .path1{
-clip-path: polygon(0px 400px, 0px 0px, 289px 3px, 304.92px 59.95px, 305.78px 63px, 400px 78px, 400px 400px);
-background-color: hsl(201, 100%, 52%);
+clip-path: polygon(0 0, 93% 0, 65% 100%, 0% 100%);
 }
 
 .hide-scrolbar::-webkit-scrollbar{

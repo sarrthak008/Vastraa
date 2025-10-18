@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex gap-7 items-center">
             <Link to={"/"} className="cursor-pointer nav-iteams">Home</Link>
             <Link to={"/"} className="cursor-pointer nav-iteams">Explore</Link>
-            <Link to={"/"} className="cursor-pointer nav-iteams">Login</Link>
+            <Link to={"/login"} className="cursor-pointer nav-iteams">Login</Link>
             <Link to={"/"} className="cursor-pointer nav-iteams bg-black text-white px-3 py-0.5 rounded-sm">Sign up</Link>
         </div>
     </nav>
