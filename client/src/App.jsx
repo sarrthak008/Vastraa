@@ -8,6 +8,7 @@ import {MainLoader} from "./components/Loader"
 import axios from "axios"
 import { useEffect } from "react"
 import Login from "./views/Login"
+import { Toaster } from "sonner"
 // load backedn url
 const FASHION_AI_API = import.meta.env.VITE_FASHION_X_AI;
 
@@ -32,12 +33,12 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    {ping && <MainLoader/>}
        <Routes>
            <Route path="/" element={<Home/>}/>
            <Route path="/login" element={<Login/>} />
            <Route path="*" element={<Notfound/>} />
        </Routes>
+       <Toaster theme="dark"/>
     </BrowserRouter>
   )
 }

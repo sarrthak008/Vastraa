@@ -90,8 +90,8 @@ const handelAiAnswers = async () => {
             <div className='float-end'>
               {
                 isLoading ? 
-                  <button className='h-[35px] w-[35px] bg-black mr-4 rounded-full text-white animate-spin'><i class="ri-loader-2-line"></i></button>
-                : <button className='h-[35px] w-[35px] bg-black mr-4 rounded-full text-white' onClick={() => handelAiAnswers()}><i className="ri-arrow-up-line text-xl"></i></button>
+                  <button className='h-[35px] w-[35px] bg-black mr-4 rounded-full text-white animate-spin cursor-progress'><i class="ri-loader-2-line"></i></button>
+                : <button className='h-[35px] w-[35px] bg-black mr-4 rounded-full text-white cursor-pointer' onClick={() => handelAiAnswers()}><i className="ri-arrow-up-line text-xl"></i></button>
               }
 
             </div>
