@@ -10,15 +10,15 @@ const Login = () => {
     <>
       <Navbar />
       <div className='w-screen h-screen overflow-hidden flex'>
-        <div className='w-[40vw] h-screen flex justify-center items-center path-1'>
+        <div className='hidden w-[40vw] h-screen md:flex justify-center items-center path-1'>
           <div className='w-[100%] h-[100%]  overflow-hidden'>
             <img src={LOGIIN_IMG} className='w-full h-full object-cover'></img>
           </div>
         </div>
-        <div className='w-[50vw]  h-screen flex justify-center items-center flex-col'>
-          <h3 className='text-black text-4xl logo-font'>{login_Title}</h3>
-          <span className='text-gray-400 text-md'>{login_Subtitle}</span>
-          <div className='w-[70%] mt-10'>
+        <div className=' md:w-[50vw]  h-screen flex justify-center items-center flex-col'>
+          <h3 className='text-black text-4xl logo-font text-center'>{login_Title}</h3>
+          <span className='text-gray-400 text-md text-center'>{login_Subtitle}</span>
+          <div className='w-[90%] md:w-[80%] lg:w-[60%] mt-10'>
             <AppInput placeholder='username or email' type='text'/>
             <AppInput placeholder='password ' type='password' />
             <span className='text-md text-purple-500 cursor-pointer mt-10 block'>Forgot password?</span>

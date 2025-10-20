@@ -33,3 +33,13 @@ clip-path: polygon(0 0, 93% 0, 65% 100%, 0% 100%);
 .hide-scrolbar::-webkit-scrollbar{
   display: none;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}   
