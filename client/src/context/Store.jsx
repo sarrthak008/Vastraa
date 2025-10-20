@@ -4,10 +4,14 @@ let Store = createContext()
 
 const StoreProvide = ({children}) =>{
   
-    const [role,setRole] = useState("admin")
+    const [role,setRole] = useState("admin");
+    const [adminOpenPannelIndex,setAdminOpenPannelIndex] = useState(0)
 
      return(
-         <Store.Provider value={{role}}>
+         <Store.Provider value={{
+            role,
+            adminOpenPannelIndex,setAdminOpenPannelIndex
+        }}>
              {children}
          </Store.Provider>
      )

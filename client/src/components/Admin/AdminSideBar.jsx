@@ -1,6 +1,7 @@
 import React from 'react'
 import { brandName } from '../../../config/BRAND'
 import OPTIONS from '../../../config/AdminDashboardOptions'
+import { useStore } from '../../context/Store'
 
 
 const ProfileViwer =()=>{
@@ -16,6 +17,11 @@ const ProfileViwer =()=>{
 
 const AdminSideBar = () => {
 
+    const {adminOpenPannelIndex,setAdminOpenPannelIndex} = useStore();
+
+    const handelCompChage = (index)=>{
+        setAdminOpenPannelIndex(index)
+    }
 
   return (
     <div className='w-[15%] h-screen fixed top-0 left-0 bg-gray-800/20 px-2'>
@@ -23,7 +29,7 @@ const AdminSideBar = () => {
          <div className='flex flex-col gap-8 mt-10 overflow-hidden'>
              {OPTIONS?.map((opt,index)=>{
                 return(
-                     <div key={index} className='cursor-pointer whitespace-nowrap text-md'>
+                     <div key={index} className={`cursor-pointer whitespace-nowrap text-md ${adminOpenPannelIndex== index ? "bg-purple-400" : null} py-1 px-1 rounded-md`} onClick={()=>handelCompChage(index)}>
                          <i className={opt?.icon}/>
                          <span className='ml-2 md:inline-block hidden   '>{opt?.name}</span>
                      </div>
