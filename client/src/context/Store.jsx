@@ -1,13 +1,13 @@
-import { Children, createContext, useContext } from "react";
+import { Children, createContext, useContext, useState } from "react";
 
 let Store = createContext()
 
 const StoreProvide = ({children}) =>{
-
-    let count = 0 
+  
+    const [role,setRole] = useState("admin")
 
      return(
-         <Store.Provider value={{count}}>
+         <Store.Provider value={{role}}>
              {children}
          </Store.Provider>
      )

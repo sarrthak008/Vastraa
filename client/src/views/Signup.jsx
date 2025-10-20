@@ -19,7 +19,7 @@ const Signup = () => {
           </div>
         </div>
 
-        <div className='w-[100vw] mt-10  h-screen flex justify-center items-center flex-col'>
+        <div className='w-[100vw] md:w-[50vw] mt-10  h-screen flex justify-center items-center flex-col'>
           <h3 className='text-black text-4xl logo-font text-center'>{signup_Title}</h3>
           <span className='text-gray-400 text-md text-center'>{signup_Subtitle}</span>
           <div className='w-[90%] md:w-[80%] lg:w-[60%] mt-10'>

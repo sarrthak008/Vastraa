@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import "./App.css"
 import { BrowserRouter ,Routes , Route } from "react-router-dom"
@@ -10,12 +9,15 @@ import { useEffect } from "react"
 import Login from "./views/Login"
 import { Toaster } from "sonner"
 import Signup from "./views/Signup"
+import { useStore } from "./context/Store"
+import AdminDashboard from "./views/Admin/AdminDashboard"
 // load backedn url
 const FASHION_AI_API = import.meta.env.VITE_FASHION_X_AI;
 
 const App = () => {
   
   const [ping,setPing] = useState(true);
+  const {role}  = useStore()
 
   const loadPingApi =async ()=>{
      try {
@@ -38,6 +40,7 @@ const App = () => {
            <Route path="/" element={<Home/>}/>
            <Route path="/login" element={<Login/>} />
            <Route path="/signup" element={<Signup/>} />
+           {role == "admin" && <Route path="/admin" element={<AdminDashboard/>} />}
            <Route path="*" element={<Notfound/>} />
        </Routes>
        <Toaster theme="dark"/>
