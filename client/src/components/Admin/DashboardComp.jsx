@@ -45,10 +45,15 @@ const DashboardComp = () => {
         }
       </div>
 
-      <div className='w-full min-h-[45vh] mt-3'>
-        <div className='w-[52vw] h-[40vh] relative bg-gray-600/50 rounded-md flex items-center justify-center gap-2 shadow-xl'>
-        <h1 className='absolute top-0 right-0'>Sales.</h1>
+      <div className='w-full min-h-[45vh] mt-15 flex gap-5'>
+        <div className='w-[50vw] h-[70vh] relative shrink-0 bg-gray-600/50 rounded-md flex items-center justify-center gap-2 shadow-xl'>
+        <h1 className='absolute top-0 text-2xl'>Progess.</h1>
           <SalesChart />
+        </div>
+
+        <div className='w-[32vw] h-[70vh] relative shrink-0 bg-gray-600/50 rounded-md flex items-center justify-center gap-2 shadow-xl'>
+        <h1 className='absolute top-0 text-2xl'>Views.</h1>
+          
         </div>
       </div>
     </div>

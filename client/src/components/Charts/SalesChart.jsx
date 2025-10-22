@@ -58,7 +58,7 @@ const data = [
 const SalesChart = () => {
   return (
     <LineChart
-      style={{ width: '100%', maxWidth: '50vw', maxHeight: '40vh', aspectRatio:2 }}
+      style={{ width: '100%', maxWidth: '50vw', maxHeight: '70vh', aspectRatio:1.8 }}
       responsive
       data={data}
       margin={{
