@@ -26,12 +26,12 @@ const AdminSideBar = () => {
   return (
     <div className='w-[15%] h-screen fixed top-0 left-0 bg-gray-800/20 px-2'>
          <h3 className='logo-font text-2xl mt-3'>{brandName}</h3>
-         <div className='flex flex-col gap-8 mt-10 overflow-hidden'>
+         <div className='flex flex-col gap-6 mt-10 overflow-hidden'>
              {OPTIONS?.map((opt,index)=>{
                 return(
                      <div key={index} className={`cursor-pointer whitespace-nowrap text-md ${adminOpenPannelIndex== index ? "bg-purple-400" : null} py-1 px-1 rounded-md`} onClick={()=>handelCompChage(index)}>
                          <i className={opt?.icon}/>
-                         <span className='ml-2 md:inline-block hidden   '>{opt?.name}</span>
+                         <span className='ml-2 md:inline-block hidden '>{opt?.name}</span>
                      </div>
                 )
              })}

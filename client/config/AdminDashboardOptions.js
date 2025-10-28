@@ -24,6 +24,10 @@ const OPTIONS = [
         name:"Orders"
      },
      {
+       icon: "ri-riding-fill",
+       name :"Delivery"
+     },
+     {
         icon:"ri-settings-4-fill",
         name:"Settings"
      }

@@ -8,6 +8,7 @@ import PaymentsComp from '../../components/Admin/PaymentsComp';
 import SettingComp from '../../components/Admin/SettingComp';
 import ChatComp from '../../components/Admin/ChatComp';
 import CustomersComp from '../../components/Admin/CustomersComp';
+import DeliveryComp from '../../components/Admin/DeliveryComp';
 
 const AdminDashboard = () => {
     const {adminOpenPannelIndex,setAdminOpenPannelIndex} = useStore();
@@ -22,7 +23,8 @@ const AdminDashboard = () => {
             {adminOpenPannelIndex == 3 && <PaymentsComp/>}
             {adminOpenPannelIndex == 4 && <ChatComp/>}
             {adminOpenPannelIndex == 5 && <OrdersComp/>}
-            {adminOpenPannelIndex == 6 && <SettingComp/>}
+            {adminOpenPannelIndex == 6 && <DeliveryComp/>}
+            {adminOpenPannelIndex == 7 && <SettingComp/>}
          </div>
     </div>
   )
