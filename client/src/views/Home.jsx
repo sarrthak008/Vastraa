@@ -3,8 +3,13 @@ import { brandName } from "../../config/BRAND"
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import ChatCircle from '../components/fashonXai/ChatCircle'
-import Upoader from '../components/fashonXai/Upoader'
-import { useEffect, useRef } from 'react'
+import BGIMG from "../assets/cloth_bg.png"
+import sareImg from "../assets/heroimages/saree.jpeg"
+import hoody from "../assets/heroimages/img1.jpeg"
+import shirt from "../assets/heroimages/shirt1.jpeg"
+import shirt1 from "../assets/heroimages/shirt2.jpeg"
+import bgvid from "../assets/heroimages/bg1.mp4"
+import bgvid1 from "../assets/heroimages/bg2.mp4"
 
 const Home = () => {
 
@@ -35,36 +40,6 @@ const Home = () => {
 
     }, [])
 
-
-
-const words = ["Quality.", "Innovation.", "Creativity.", "Excellence."];
-  const textRef = useRef(null);
-  const wordIndex = useRef(0);
-
-  useGSAP(() => {
-    const el = textRef.current;
-
-    const changeWord = () => {
-      gsap.to(el, {
-        y: -40,
-        opacity: 0,
-        duration: 0.6,
-        ease: "power2.in",
-        onComplete: () => {
-          wordIndex.current = (wordIndex.current + 1) % words.length;
-          el.textContent = words[wordIndex.current];
-          gsap.fromTo(
-            el,
-            { y: 40, opacity: 0 },
-            { y: 0, opacity: 1, duration: 0.6, ease: "power2.out" }
-          );
-        },
-      });
-    };
-    const interval = setInterval(changeWord, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
     return (
         <>
             <Navbar />
@@ -81,17 +56,19 @@ const words = ["Quality.", "Innovation.", "Creativity.", "Excellence."];
                 <div className="w-[95vw] mx-auto h-[80vh] flex gap-1.5 justify-center">
 
                     <div className='w-[18vw] h-full hero'>
-                        <div className='w-full h-[55vh] bg-gray-500 rounded-3xl'>
-
+                        <div className='w-full h-[55vh] bg-gray-500 rounded-3xl overflow-hidden'>
+                            <img src={shirt1} className='h-full w-full object-cover' />
                         </div>
-                        <div className='w-full h-[20vh] bg-gray-700 rounded-3xl mt-3'>
-
+                        <div className='w-full h-[20vh] bg-gray-700 rounded-3xl mt-3 overflow-hidden'>
+                            <img src={shirt} className='h-full w-full object-cover' />
                         </div>
                     </div>
 
                     <div className='flex h-full w-[18vw] items-end-safe hero'>
-                        <div className='w-full h-[55vh] bg-gray-600 rounded-3xl'>
-
+                        <div className='w-full h-[55vh] bg-gray-600 rounded-3xl overflow-hidden'>
+                            <video autoPlay muted loop className='h-full w-full object-cover'>
+                                <source src={bgvid}></source>
+                            </video>
                         </div>
                     </div>
 
@@ -103,17 +80,19 @@ const words = ["Quality.", "Innovation.", "Creativity.", "Excellence."];
                     </div>
 
                     <div className='flex h-full w-[18vw] items-end-safe hero'>
-                        <div className='w-full h-[55vh] bg-gray-600 rounded-3xl'>
-
+                        <div className='w-full h-[55vh] bg-gray-600 rounded-3xl overflow-hidden'>
+                            <img src={hoody} className='h-full w-full object-cover' />
                         </div>
                     </div>
 
                     <div className='w-[18vw] h-full hero'>
-                        <div className='w-full h-[55vh] bg-gray-600 rounded-3xl'>
-
+                        <div className='w-full h-[55vh] bg-gray-600 rounded-3xl overflow-hidden'>
+                            <video autoPlay muted loop className='h-full w-full object-cover overflow-hidden'>
+                                <source src={bgvid1}></source>
+                            </video>
                         </div>
-                        <div className='w-full h-[20vh] bg-gray-400 rounded-3xl mt-3'>
-
+                        <div className='w-full h-[20vh] bg-gray-400 rounded-3xl mt-3 overflow-hidden'>
+                            <img src={sareImg} className='h-full w-full object-cover' />
                         </div>
                     </div>
 
@@ -122,13 +101,8 @@ const words = ["Quality.", "Innovation.", "Creativity.", "Excellence."];
 
             { /*=== SECOND PAGE CODE ===*/}
 
-            <div className='h-screen w-screen flex items-center justify-center relative'>
-                <h2 className="text-6xl  logo-font whitespace-nowrap">
-                     We make{" "}
-                    <span ref={textRef} className="text-purple-500">
-                        Quality
-                    </span>
-                </h2>
+            <div className='h-[70vh] w-screen flex items-center mt-[10vh] justify-center relative overflow-hidden'>
+                <img src={BGIMG} className='h-full w-full object-cover' />
             </div>
 
 
