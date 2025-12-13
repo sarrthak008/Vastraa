@@ -48,7 +48,7 @@ const Home = () => {
 
             <div className="min-h-[80vh] w-screen mt-20">
                 <div className="flex items-center justify-center flex-col">
-                    <h1 className="text-6xl logo-font hero-txt">Evalate your style with</h1>
+                    <h1 className="text-6xl logo-font hero-txt text-center">Evalate your style with</h1>
                     <h1 className="text-6xl mt-2 logo-font hero-txt">{brandName}</h1>
                     <h4 className='text-pink-500 support-txt'>support with <span>Fashion ✘ AI</span></h4>
                 </div>
