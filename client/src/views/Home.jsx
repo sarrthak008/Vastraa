@@ -2,6 +2,12 @@ import Navbar from '../components/Navbar'
 import { brandName } from "../../config/BRAND"
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
+
+// import gsap and register it to use scrollTrigger .
+
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 import ChatCircle from '../components/fashonXai/ChatCircle'
 import BGIMG from "../assets/cloth_bg.png"
 import sareImg from "../assets/heroimages/saree.jpeg"
@@ -10,6 +16,7 @@ import shirt from "../assets/heroimages/shirt1.jpeg"
 import shirt1 from "../assets/heroimages/shirt2.jpeg"
 import bgvid from "../assets/heroimages/bg1.mp4"
 import bgvid1 from "../assets/heroimages/bg2.mp4"
+import Footer from '../components/Footer'
 
 const Home = () => {
 
@@ -38,14 +45,29 @@ const Home = () => {
             opacity: 0
         })
 
-    }, [])
+    },[])
+
+
+    useGSAP(() => {
+        gsap.from(".img", {
+            scrollTrigger: {
+                trigger: ".page-2",
+                start: "40vh 50%",
+                end: "100% 80%",
+                // markers: true,
+                scrub: true,
+            },
+            duration: 5,
+            delay: 1,
+            opacity: 0,
+        });
+    });
 
     return (
         <>
             <Navbar />
 
             {/* ==== first page code ===== */}
-
             <div className="min-h-[80vh] w-screen mt-20">
                 <div className="flex items-center justify-center flex-col">
                     <h1 className="text-6xl logo-font hero-txt text-center">Evalate your style with</h1>
@@ -101,11 +123,21 @@ const Home = () => {
 
             { /*=== SECOND PAGE CODE ===*/}
 
-            <div className='h-[70vh] w-screen flex items-center mt-[10vh] justify-center relative overflow-hidden'>
-                <img src={BGIMG} className='h-full w-full object-cover' />
+            <div className='h-[75vh] page-2 w-screen  flex-col flex  mt-[30vh] justify-center relative overflow-hidden'>
+                <img src={BGIMG} className='img h-[80%] w-full object-cover' />
+                <h3 className='text-4xl text-right mr-[4vw] mt-3 text-purple-500'> “Clothing, Created From Scratch.” </h3>
             </div>
 
 
+            {/* === third page code here==== */}
+
+            <div className='h-screen w-screen'>
+                
+            </div>
+
+
+
+            <Footer />
             <ChatCircle />
         </>
     )
