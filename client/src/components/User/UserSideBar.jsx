@@ -49,12 +49,12 @@ const UserSideBar = () => {
       {/* // write a code for mobile  */}
 
 
-      <div className='w-screen h-[10vh]  fixed bottom-0 left-0 bg-gray-800/20  md:hidden'>
+      <div className='w-screen h-[8vh] flex items-center  fixed bottom-0 left-0 bg-gray-800/20  md:hidden'>
         {/* <h3 className='logo-font text-2xl mt-3'>{brandName}</h3> */}
-        <div className='flex gap-6 h-full   overflow-hidden items-center justify-evenly'>
+        <div className='flex gap-6 h-full  w-full overflow-hidden items-center justify-evenly'>
           {USER_DASHBOARD_OPTIONS_MOBILE?.map((opt, index) => {
             return (
-              <div key={index} className={`cursor-pointer  whitespace-nowrap text-md ${OpenIndex == index ? 'bg-purple-500  h-[45px] w-[45px] flex items-center justify-center text-white p-2 rounded-md ' : null} `} onClick={() => handelSidebarChnage(index, opt?.name)}>
+              <div key={index} className={`cursor-pointer  whitespace-nowrap text-md ${OpenIndex == index ? 'bg-purple-500  h-[40px] w-[40px] flex items-center justify-center text-white p-2 rounded-full ' : null} `} onClick={() => handelSidebarChnage(index, opt?.name)}>
                 <i className={`${opt?.icon} text-[20px]`} />
               </div>
             )
