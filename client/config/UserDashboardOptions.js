@@ -34,7 +34,7 @@ const USER_DASHBOARD_OPTIONS = [
 
 const USER_DASHBOARD_OPTIONS_MOBILE = [
    {
-      icon: "ri-dashboard-line",
+      icon: "ri-home-3-line",
       name: "Home"
    },
    {

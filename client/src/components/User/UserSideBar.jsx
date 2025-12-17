@@ -27,7 +27,7 @@ const UserSideBar = () => {
   }
 
 
-  return (
+return (
     <>
       {/* // code for desktop and tablate  UI   */}
       <div className='w-[15%] h-screen fixed top-0 left-0 bg-gray-800/20 px-2 hidden md:block'>
@@ -49,7 +49,7 @@ const UserSideBar = () => {
       {/* // write a code for mobile  */}
 
 
-      <div className='w-screen h-[8vh] flex items-center  fixed bottom-0 left-0 bg-gray-800/20  md:hidden'>
+      <div className='w-screen h-[8vh] flex items-center z-30  fixed bottom-0 left-0 bg-gray-800/20  md:hidden'>
         {/* <h3 className='logo-font text-2xl mt-3'>{brandName}</h3> */}
         <div className='flex gap-6 h-full  w-full overflow-hidden items-center justify-evenly'>
           {USER_DASHBOARD_OPTIONS_MOBILE?.map((opt, index) => {
