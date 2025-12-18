@@ -43,3 +43,22 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance:textfield;
 }   
+
+
+.custom-select {
+  appearance: none;
+  width: 100px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  position: relative;
+}
+
+.custom-select option{
+  position: absolute;
+  top: -10px;
+
+  width: 200px;
+  display: block;
+  padding: 10px;
+  background-color: #e2aff5;
+}

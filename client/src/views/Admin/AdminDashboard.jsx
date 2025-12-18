@@ -17,7 +17,7 @@ const AdminDashboard = () => {
   return (
     <div className='h-screen w-screen overflow-hidden'>
          <AdminSideBar/>
-          <div className='w-[85%] h-screen overflow-x-hidden overflow-y-scroll fixed right-0 top-0 hide-scrolbar px-2'>
+          <div className='w-[85%] h-screen overflow-x-hidden overflow-y-scroll  fixed right-0 top-0  px-2'>
               {adminOpenPannelIndex == 0 && <DashboardComp/>}
               {adminOpenPannelIndex == 1 && <CustomersComp/>}
               {adminOpenPannelIndex == 2 && <ProductsComp/>}

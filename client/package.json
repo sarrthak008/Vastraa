@@ -16,6 +16,7 @@
     "axios": "^1.12.2",
     "gsap": "^3.13.0",
     "imagekit-javascript": "^4.0.1",
+    "leaflet": "^1.9.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-redux": "^9.2.0",
