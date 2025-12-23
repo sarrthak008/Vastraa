@@ -9,14 +9,16 @@ import UserPayment from '../../components/User/UserPayment';
 import UserHelpDesk from '../../components/User/UserHelpDesk';
 import UserSetings from '../../components/User/UserSetings';
 import ChatCircle from '../../components/fashonXai/ChatCircle';
+import Cart from '../../components/Cart';
 
 const UserDashboard = () => {
   const adminOpenPannelIndex = useSelector(state => state.ui.activeSideBarUserIndex);
 
   return (
     <div className='h-screen w-screen overflow-hidden'>
+      <Cart/>
       <UserSideBar />
-      <div className='w-[85%] h-screen overflow-x-hidden overflow-y-scroll fixed right-0 top-0 hide-scrolbar px-2'>
+      <div className=' w-screen md:w-[85%] h-screen overflow-x-hidden overflow-y-scroll fixed right-0 top-0 hide-scrolbar px-2'>
         {adminOpenPannelIndex == 0 && <UserHome />}
         {adminOpenPannelIndex == 1 && <UserOrders />}
         {adminOpenPannelIndex == 2 && < UserAddress />}
