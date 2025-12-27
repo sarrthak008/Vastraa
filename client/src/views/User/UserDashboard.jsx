@@ -18,11 +18,17 @@ const UserDashboard = () => {
     <div className='h-screen w-screen overflow-hidden'>
       <Cart/>
       <UserSideBar />
-      <div className=' w-screen md:w-[85%] h-screen overflow-x-hidden overflow-y-scroll fixed right-0 top-0 hide-scrolbar px-2'>
+      <div className=' w-screen md:w-[85%]  overflow-x-hidden overflow-y-scroll fixed right-0 top-0 hide-scrolbar px-2'>
         {adminOpenPannelIndex == 0 && <UserHome />}
         {adminOpenPannelIndex == 1 && <UserOrders />}
         {adminOpenPannelIndex == 2 && < UserAddress />}
-        {adminOpenPannelIndex == 3 && <UserWishList />}
+           <div className='hidden md:block'>
+              {adminOpenPannelIndex == 3 && <UserWishList /> }  
+           </div>
+
+           <div className='block md:hidden'>
+              {adminOpenPannelIndex == 3 && <UserSetings /> }  
+           </div>
         {adminOpenPannelIndex == 4 && <UserPayment />}
         {adminOpenPannelIndex == 5 && <UserHelpDesk />}
         {adminOpenPannelIndex == 6 && <UserSetings />}
