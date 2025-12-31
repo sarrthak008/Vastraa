@@ -1,8 +1,11 @@
 import React from 'react'
+import ToggleSwitch from '../Inputs/ToggleSwitch'
 
 const UserSetings = () => {
   return (
-    <div>UserSetings</div>
+    <div>
+       <ToggleSwitch/>
+    </div>
   )
 }
 
