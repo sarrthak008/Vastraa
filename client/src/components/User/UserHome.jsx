@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import TopBar from '../TopBar'
 import HrWithTitle from "../HrWithTitle"
 import { ProductCard, ProductCardSkeleton } from '../Products/ProductCard'
+import SearchPlaceHolders  from "../../../config/SearchPlaceHolders"
+
 
 const UserHome = () => {
+
+
   return (
     <>
       <TopBar />
       <div className='overflow-y-scroll h-screen hide-scrolbar mt-[12vh] '>
-        <div className='w-full h-[35vh] bg-gray-400 rounded-2xl'>
+        <div className='w-full h-[45vh] bg-gray-400 rounded-2xl'>
           {/* add your main offer image here */}
         </div>
         <HrWithTitle title='Offers for youhh' className='mt-10' />
