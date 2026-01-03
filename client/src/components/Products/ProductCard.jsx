@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 
 const ProductCard = () => {
   return (
-    <div className="w-[260px] rounded-2xl bg-[#f5f5f5] p-3 shadow-sm hover:shadow-md transition">
+    <div className="w-[300px] md:w-[260px] rounded-2xl bg-[#f5f5f5] p-3 shadow-sm hover:shadow-md transition">
       
       {/* Image */}
       <div className="relative overflow-hidden rounded-xl">
