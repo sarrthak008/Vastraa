@@ -5,6 +5,7 @@ import { signup_Subtitle, signup_Title } from '../../config/BRAND'
 import AppInput from '../components/Inputs/AppInput'
 import AppButton from '../components/Inputs/AppButton'
 import HrWithTitle from '../components/HrWithTitle'
+import FloatingInput from '../components/Inputs/FloatingInput'
 
 
 const Signup = () => {
@@ -22,11 +23,13 @@ const Signup = () => {
         <div className='w-[100vw] md:w-[50vw] mt-10  h-screen flex justify-center items-center flex-col'>
           <h3 className='text-black text-4xl logo-font text-center'>{signup_Title}</h3>
           <span className='text-gray-400 text-md text-center'>{signup_Subtitle}</span>
-          <div className='w-[90%] md:w-[80%] lg:w-[60%] mt-10'>
-            <AppInput placeholder='username or email' type='text' />
-            <AppInput placeholder='mobile number ' type='number' />
-            <AppInput placeholder='password ' type='password' />
-            <AppButton title='sign up' />
+          <div className='w-[90%] md:w-[80%] lg:w-[60%] mt-10 overflow-hidden'>
+             <div className='flex flex-col gap-4'>
+               <FloatingInput label='email'/>
+               <FloatingInput label='phone number'/>
+               <FloatingInput label='password'/>
+            <AppButton title='sign up' className='w-full' />
+             </div>
 
             <div className='mt-4'>already have an account? <span className='text-purple-500 cursor-pointer'>log in</span></div>
             <div className='mt-10'>

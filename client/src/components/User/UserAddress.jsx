@@ -11,13 +11,13 @@ import Popup from '../Containers/Popup';
 const AddressNotFound = ({ setisAddressModelOpen }) => {
   return (
     <>
-      <div className='h-[300px] w-[300px]'>
+      <div className='h-[250px] w-[250px]'>
         <img src={ADD_IMG} />
         <p className='text-center mt-3 text-gray-400 text-sm'>“Where should I send your parcel?”</p>
       </div>
 
       <div className=''>
-        <AppButton title='Add new address' varient='purple' onclick={() => setisAddressModelOpen(true)} />
+        <AppButton title='Add new address' className='px-2' varient='purple' onclick={() => setisAddressModelOpen(true)} />
       </div>
     </>
   )

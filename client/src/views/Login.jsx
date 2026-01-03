@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import { login_Subtitle, login_Title } from '../../config/BRAND'
 import AppInput from '../components/Inputs/AppInput'
 import AppButton from '../components/Inputs/AppButton'
+import FloatingInput from '../components/Inputs/FloatingInput'
 
 const Login = () => {
   return (
@@ -18,10 +19,12 @@ const Login = () => {
         <div className=' md:w-[50vw]  h-screen flex justify-center items-center flex-col'>
           <h3 className='text-black text-4xl logo-font text-center'>{login_Title}</h3>
           <span className='text-gray-400 text-md text-center'>{login_Subtitle}</span>
-          <div className='w-[90%] md:w-[80%] lg:w-[60%] mt-10'>
-            <AppInput placeholder='username or email' type='text'/>
-            <AppInput placeholder='password ' type='password' />
-            <span className='text-md text-purple-500 cursor-pointer mt-10 block'>Forgot password?</span>
+          <div className='w-[90%] md:w-[80%] lg:w-[60%] mt-10 '>
+             <div className='flex flex-col gap-4'>
+               <FloatingInput/>
+               <FloatingInput/>
+             </div>
+            <span className='text-md text-purple-500 cursor-pointer mt-10 block mb-3'>Forgot password?</span>
             <AppButton title='login'/>
 
             {/* <div className='mt-20'>
