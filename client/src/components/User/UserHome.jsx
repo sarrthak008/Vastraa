@@ -20,8 +20,8 @@ const UserHome = () => {
         <div className='w-full   justify-center md:justify-start flex flex-wrap gap-5 min-h-screen mb-40 mt-12'>
             {
                [...Array(10)].map((item)=>(
-                <ProductCard/>
-                // /<ProductCardSkeleton/>
+                //<ProductCard/>
+                <ProductCardSkeleton/>
                ))
             }
 

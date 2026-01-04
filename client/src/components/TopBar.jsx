@@ -7,7 +7,7 @@ import SearchPlaceHolders from '../../config/SearchPlaceHolders'
 
 const TopBar = () => {
 
-     const [placeholder,setPlaceholder] = useState(SearchPlaceHolders[0])
+    const [placeholder,setPlaceholder] = useState(SearchPlaceHolders[0])
 
     useEffect(()=>{
           let int = setInterval(()=>{
@@ -23,7 +23,8 @@ const TopBar = () => {
         <div className='w-[80%] md:w-[50%] flex'>
            <AppInput placeholder={placeholder}/>
         </div>
-        <div>
+        <div className='flex gap-7'>
+           <i className="ri-notification-3-fill text-2xl cursor-pointer"></i>
           <i className="ri-shopping-cart-fill text-2xl cursor-pointer"></i>
         </div>
     </div>
