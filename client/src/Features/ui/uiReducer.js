@@ -34,4 +34,8 @@ const handelSidebarChnageForUsers = (state,action) =>{
     }
 }
 
-export {handelSidebarChnage , handelSidebarChnageForUsers}
+const handelProfilePageToggle = (state, action) => {
+     state.isProfilepageOpen = action.payload.isopen;
+}
+
+export {handelSidebarChnage , handelSidebarChnageForUsers ,handelProfilePageToggle}

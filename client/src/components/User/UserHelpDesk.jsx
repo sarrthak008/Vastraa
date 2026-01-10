@@ -1,8 +1,11 @@
 import React from 'react'
+import ImgContainer from '../Containers/ImgContainer'
 
 const UserHelpDesk = () => {
   return (
-    <div>UserHelpDesk</div>
+    <div>
+      <ImgContainer/>
+    </div>
   )
 }
 

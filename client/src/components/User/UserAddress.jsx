@@ -6,6 +6,7 @@ import ADDRESS_RULES from '../../../config/AddressRules'
 import { toast } from 'sonner';
 import FloatingInput from '../Inputs/FloatingInput';
 import Popup from '../Containers/Popup';
+import ImgContainer from '../Containers/ImgContainer'
 
 //show component if there is any address not avaliable not found.
 const AddressNotFound = ({ setisAddressModelOpen }) => {
@@ -66,7 +67,7 @@ const UserAddress = () => {
   return (
     <div className='w-full min-h-screen relative flex flex-col  items-center justify-center'>
       {/* <h2 className='text-2xl p-3 absolute top-0 left-0'>Address</h2> */}
-      <AddressNotFound setisAddressModelOpen={setisAddressModelOpen} />
+      <ImgContainer SRC={ADD_IMG} title={"add address here.."} btn_title='add new address' onclick={() => setisAddressModelOpen(true)} />
 
       {isAddressModelOpen && <AddAddress setisAddressModelOpen={setisAddressModelOpen} />}
     </div>

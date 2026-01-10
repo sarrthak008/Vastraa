@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 
 // reducers 
-import { handelSidebarChnage, handelSidebarChnageForUsers } from "./uiReducer";
+import { handelProfilePageToggle, handelSidebarChnage, handelSidebarChnageForUsers } from "./uiReducer";
 
 const initialState = {
 
@@ -14,6 +14,9 @@ const initialState = {
      activeSideBarUser : localStorage.getItem("activeSideBarUser") || "Dashboard",
      activeSideBarUserIndex: localStorage.getItem("activeSideBarUserIndex") || 0 ,
 
+     // profile page 
+    isProfilepageOpen : false
+
 }
 
 
@@ -22,12 +25,13 @@ const uiSlice = createSlice({
     initialState : initialState,
     reducers:{
         setActiveSidebar : handelSidebarChnage,
-        setActiveSidebarForUsers : handelSidebarChnageForUsers
+        setActiveSidebarForUsers : handelSidebarChnageForUsers,
+        setProfilePageToggle : handelProfilePageToggle
     }
 })
 
 
 
-export  const {setActiveSidebar , setActiveSidebarForUsers } = uiSlice.actions;
+export  const {setActiveSidebar , setActiveSidebarForUsers ,setProfilePageToggle } = uiSlice.actions;
 
 export default uiSlice.reducer;

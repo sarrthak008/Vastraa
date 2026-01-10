@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function UserSetings() {
 
   return (
-    <div className="p-6 overflow-y-scroll h-screen hide-scrolbar">
+    <div className="p-6  overflow-y-scroll h-screen hide-scrolbar">
       {/* Page Title */}
       <h1 className="text-2xl font-semibold">Settings</h1>
       <p className="text-gray-500 mb-6">

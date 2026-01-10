@@ -9,15 +9,17 @@ import UserPayment from '../../components/User/UserPayment';
 import UserHelpDesk from '../../components/User/UserHelpDesk';
 import UserSetings from '../../components/User/UserSetings';
 import ChatCircle from '../../components/fashonXai/ChatCircle';
-import TopBar from '../../components/TopBar';
+import Profile from "../../components/Profile"
+
 
 const UserDashboard = () => {
   const adminOpenPannelIndex = useSelector(state => state.ui.activeSideBarUserIndex);
+  const isToggleProfile = useSelector(state => state.ui.isProfilepageOpen)
 
   return (
     <div className='h-screen w-screen overflow-hidden'>
       <UserSideBar />
-      <div className=' w-screen md:w-[85%]  overflow-x-hidden overflow-y-scroll fixed right-0 top-0 hide-scrolbar px-2'>
+      <div className=' w-screen md:w-[85%]   overflow-x-hidden overflow-y-scroll fixed right-0 top-0 hide-scrolbar px-2'>
         {adminOpenPannelIndex == 0 && <UserHome />}
         {adminOpenPannelIndex == 1 && <UserOrders />}
         {adminOpenPannelIndex == 2 && < UserAddress />}
@@ -33,6 +35,7 @@ const UserDashboard = () => {
         {adminOpenPannelIndex == 6 && <UserSetings />}
       </div>
       <ChatCircle/>
+      {isToggleProfile && <Profile/> }
     </div>
   )
 }
