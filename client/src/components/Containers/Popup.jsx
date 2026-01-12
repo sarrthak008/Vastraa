@@ -3,7 +3,7 @@ import { brandName } from '../../../config/BRAND'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap';
 
-const Popup = ({ children, className, title = brandName, rules = [], onclose = () => { } , onsave=()=>{} , isSaveButton = true}) => {
+const Popup = ({ children, className, title = null, rules = [], onclose = () => { } , onsave=()=>{} , isSaveButton = true , save_btn_title = "save" }) => {
 
     useGSAP(() => {
         gsap.from(
@@ -19,7 +19,8 @@ const Popup = ({ children, className, title = brandName, rules = [], onclose = (
 
     return (
         <div className={`popup ${className} bg-white relative rounded-2xl overflow-hidden shadow-2xl`}>
-            <div className='bg-gray-200 w-full h-[9vh] border-b border-gray-400 p-1 text-2xl flex items-center'>{title}</div>
+            {title && 
+            <div className='bg-gray-200 w-full h-[9vh] border-b border-gray-400 p-1 text-2xl flex items-center'>{title}</div>}
             <div className=' p-1 overflow-x-hidden'>
                 {children}
             </div>
@@ -31,7 +32,7 @@ const Popup = ({ children, className, title = brandName, rules = [], onclose = (
             <div className='border-gray-300 mt-4 w-full gap-4 h-[9vh] border-t p-1 flex items-center justify-end'>
                 <button className='bg-gray-200  py-[7px] px-10 text-md rounded-md cursor-pointer ' onClick={() => onclose()}>close</button>
                 {isSaveButton && 
-                <button className='bg-purple-500  py-[7px] px-10 hover:bg-black hover:text-white text-md rounded-md cursor-pointer ' onClick={()=>onsave()}>save</button> }
+                <button className='bg-purple-500  py-[7px] px-10 hover:bg-black hover:text-white text-md rounded-md cursor-pointer ' onClick={()=>onsave()}>{save_btn_title}</button> }
             </div>
         </div>
     )

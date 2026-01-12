@@ -1,7 +1,7 @@
 import React from 'react'
 import { brandName, support } from '../../../config/BRAND'
 
-const ImgContainer = ({ SRC = null, title = null ,btn_title = brandName , onclick = ()=>null}) => {
+const ImgContainer = ({ SRC = null, title = null, btn_title = brandName, onclick = () => null, isBtnActive = true }) => {
   return (
     <div className='h-screen w-full flex items-center justify-center flex-col'>
       {
@@ -17,12 +17,13 @@ const ImgContainer = ({ SRC = null, title = null ,btn_title = brandName , onclic
               {title && <p className='text-center mt-3 text-gray-400 text-sm'>{title}</p>}
             </div>
 
-            <div className='mt-5'>
-              <button className="btn cursor-pointer" onClick={()=>onclick()}>{btn_title}</button>
-            </div>
+            {
+              isBtnActive && <div className='mt-5'>
+                <button className="btn cursor-pointer" onClick={() => onclick()}>{btn_title}</button>
+              </div>
+            }
           </>
       }
-,
 
     </div>
   )
