@@ -17,6 +17,7 @@ const AddressCard = () => {
   const emojis = ["🏢", "😀", "😎", "🚀", "💼", "👨‍💻", "👩‍💻", "📍"];
 
   const [emoji, setEmoji] = useState("🏢");
+  const [isConfirmBoxActive, setIsConfirmBoxActive] = useState(false);
 
   useEffect(() => {
     const randomEmoji = emojis[Math.floor(Math.random() * emojis.length)];
@@ -24,54 +25,60 @@ const AddressCard = () => {
   }, []);
 
   return (
-  <div className="relative w-[420px] cursor-pointer bg-white rounded-2xl shadow-lg p-4">
+    <>
+      <div  onClick={()=>setIsConfirmBoxActive(true)} className="relative w-[420px] cursor-pointer bg-white rounded-2xl shadow-lg p-4">
 
-    {/* Header */}
-    <div className="flex items-center gap-3">
+        {/* Header */}
+        <div className="flex items-center gap-3">
 
-      {/* Profile Circle */}
-      <div className="w-[50px] h-[50px] relative rounded-full 
+          {/* Profile Circle */}
+          <div className="w-[50px] h-[50px] relative rounded-full 
                       border-2 border-green-500
                       bg-gradient-to-br from-purple-500 to-blue-500
                       flex items-center justify-center text-2xl text-white">
-        {emoji}
+            {emoji}
 
-        {/* Default Mark */}
-        {true && (
-          <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full 
+            {/* Default Mark */}
+            {true && (
+              <div className="absolute -top-2 -right-2 w-6 h-6 rounded-full 
                           bg-green-500 text-white flex items-center justify-center text-sm">
-            <i className="ri-check-line"></i>
+                <i className="ri-check-line"></i>
+              </div>
+            )}
           </div>
-        )}
+
+          <h2 className="text-xl font-bold text-gray-900">Office</h2>
+        </div>
+
+        {/* Details */}
+        <div className="mt-6 space-y-2 text-sm text-gray-700">
+
+          {/* Address */}
+          <div className="flex items-start gap-3">
+            <i className="ri-map-pin-2-fill text-lg text-blue-600"></i>
+            <p>2nd Floor, Tech Park, Pune</p>
+          </div>
+
+          {/* Mobile */}
+          <div className="flex items-center gap-3">
+            <i className="ri-phone-fill text-lg text-green-600"></i>
+            <p>+91 98765 43210</p>
+          </div>
+
+          {/* Pincode */}
+          <div className="flex items-center gap-3">
+            <i className="ri-mail-send-fill text-lg text-purple-600"></i>
+            <p>411001</p>
+          </div>
+
+        </div>
       </div>
+      {isConfirmBoxActive && <ConfirmBox onclose={()=>setIsConfirmBoxActive(false)}>
+        <h1 className='text-xl'>set as default address !</h1>
+      </ConfirmBox>}
+    </>
 
-      <h2 className="text-xl font-bold text-gray-900">Office</h2>
-    </div>
-
-    {/* Details */}
-    <div className="mt-6 space-y-2 text-sm text-gray-700">
-
-      {/* Address */}
-      <div className="flex items-start gap-3">
-        <i className="ri-map-pin-2-fill text-lg text-blue-600"></i>
-        <p>2nd Floor, Tech Park, Pune</p>
-      </div>
-
-      {/* Mobile */}
-      <div className="flex items-center gap-3">
-        <i className="ri-phone-fill text-lg text-green-600"></i>
-        <p>+91 98765 43210</p>
-      </div>
-
-      {/* Pincode */}
-      <div className="flex items-center gap-3">
-        <i className="ri-mail-send-fill text-lg text-purple-600"></i>
-        <p>411001</p>
-      </div>
-
-    </div>
-  </div>
-);
+  );
 
 
 }
@@ -119,10 +126,10 @@ const UserAddress = () => {
 
   return (
     <div className='w-full min-h-screen relative p-2'>
-      <div  className='fixed right-[2%] z-[10]'>
-         <button className='btn' onClick={() => setisAddressModelOpen(true)} >+ Add Address</button>
+      <div className='fixed right-[2%] z-[10]'>
+        <button className='btn' onClick={() => setisAddressModelOpen(true)} >+ Add Address</button>
       </div>
-      
+
       {/* <h2 className='text-2xl p-3 absolute top-0 left-0'>Address</h2> */}
       {/* <ImgContainer SRC={ADD_IMG} title={"add address here.."} btn_title='add new address' onclick={() => setisAddressModelOpen(true)} /> */}
 
