@@ -10,8 +10,8 @@ import Cart from './Cart'
 const TopBar = () => {
 
   const [placeholder, setPlaceholder] = useState(SearchPlaceHolders[0])
-  const [isNotificationPannelOn , setisNotificationPannelOn] = useState(false)
-
+  const [isNotificationPannelOn, setisNotificationPannelOn] = useState(false)
+  const [cartOpen, setCartOpen] = useState(false)
 
   useEffect(() => {
     let int = setInterval(() => {
@@ -20,8 +20,8 @@ const TopBar = () => {
     return () => clearInterval(int);
   }, [])
 
-  const handelNotificationPannel =()=>{
-     setisNotificationPannelOn(!isNotificationPannelOn)
+  const handelNotificationPannel = () => {
+    setisNotificationPannelOn(!isNotificationPannelOn)
   }
 
 
@@ -32,13 +32,13 @@ const TopBar = () => {
         <div className='w-[80%] md:w-[50%] flex'>
           <AppInput placeholder={placeholder} />
         </div>
-        <div className='flex gap-7'> 
-          <i className="ri-notification-3-fill text-2xl cursor-pointer" onClick={()=>handelNotificationPannel()} onMouseEnter={()=>handelNotificationPannel()}></i>
-          <i className="ri-shopping-cart-fill text-2xl cursor-pointer"></i>
+        <div className='flex gap-7'>
+          <i className="ri-notification-3-fill text-2xl cursor-pointer" onClick={() => handelNotificationPannel()} onMouseEnter={() => handelNotificationPannel()}></i>
+          <i className="ri-shopping-cart-fill text-2xl cursor-pointer" onClick={()=>setCartOpen(true)}></i>
         </div>
       </div>
-       <Cart/>
-      {isNotificationPannelOn && <Notifications/>}
+      <Cart isOpen={cartOpen} onClose={() => setCartOpen(false)} />
+      {isNotificationPannelOn && <Notifications />}
     </>
   )
 }
