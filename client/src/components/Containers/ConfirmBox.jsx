@@ -6,7 +6,7 @@ const ConfirmBox = ({ title="confirm", children , onclose =()=>null}) => {
   return (
     <BlurBaground>
          <Popup  className={"w-[340px]"} save_btn_title='ok' onclose={()=>onclose()}>
-             <div className='h-[80px] flex items-center justify-center'>
+             <div className='min-h-[40px] flex items-center justify-center'>
                  {children}
              </div>
          </Popup>

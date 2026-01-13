@@ -3,6 +3,7 @@ import AppInput from "./Inputs/AppInput"
 import AppButton from './Inputs/AppButton'
 import SearchPlaceHolders from '../../config/SearchPlaceHolders'
 import Notifications from './Notifications'
+import Cart from './Cart'
 
 
 
@@ -36,6 +37,7 @@ const TopBar = () => {
           <i className="ri-shopping-cart-fill text-2xl cursor-pointer"></i>
         </div>
       </div>
+       <Cart/>
       {isNotificationPannelOn && <Notifications/>}
     </>
   )
